@@ -28,7 +28,6 @@ void data_task(void *p) {
 void process_task(void *p) {
     int data = 0;
     int valores[5] = {0,0,0,0,0};
-    int i = 4;
 
     while (true) {
         if (xQueueReceive(xQueueData, &data, 100)) {
@@ -42,7 +41,7 @@ void process_task(void *p) {
                 soma += valores[j];
             }
             int m=soma/5;
-            printf("m é %d e i é %d\n", m, i);
+            printf("%d\n", m);
 
             // deixar esse delay!
             vTaskDelay(pdMS_TO_TICKS(50));
